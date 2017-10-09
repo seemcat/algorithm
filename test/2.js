@@ -11,3 +11,5 @@ const test = (num1, num2, num3, result) => {
 
 test(1,2,3,3);
 test(0,40,1,40);
+test(0,0,1,1);
+test(3,2,1,3);
