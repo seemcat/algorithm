@@ -24,4 +24,8 @@ const t = {val: 1,
   children: [a, b],
 };
 
+<<<<<<< HEAD
 test([t]);
+=======
+test([t], [[1], [2, 3], [1]]);
+>>>>>>> 3f17e2e... changes to #20
