@@ -10,5 +10,6 @@ const test = (linkedList, result) => {
 
 const b = { val: 2};
 const a = { val: 1, next: b };
-test(a, false);
-test(b, false);
+b['next'] = a;
+test(a, true);
+test(b, true);
