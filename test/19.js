@@ -13,3 +13,9 @@ const a = { val: 1, next: b };
 b['next'] = a;
 test(a, true);
 test(b, true);
+
+const d = { val: 2};
+const c = { val: 1, next: d };
+d['next'] = [];
+test(c, false);
+test(d, false);
