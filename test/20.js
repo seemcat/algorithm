@@ -1,27 +1,44 @@
 const solution = require('../solutions/20');
 
-const test = (tree, result) => {
-  if (solution(tree) == result) {
-    console.log(`Correct!`);
+const tree1 = {
+  val: 1,
+  children: [{
+    val: 2,
+    children: [],
+  }, {
+    val: 3,
+    children: [],
+  }],
+};
+
+const tree2 = {
+  val: 1,
+  children: [{
+    val: 2,
+    children: [{
+      val: 4,
+      children: [],
+    }, {
+      val: 5, children: [],
+    }],
+  }, {
+    val: 3,
+    children: [{
+      val: 6,
+      children: []}, {
+        val: 7,
+        children: [],
+      }],
+  }],
+};
+
+const test = (current, result)=>{
+  if (solution(current).length === result) {
+    console.log('Correct levels!');
   } else {
-    console.log(`Wrong. Expected: ${result}. Actual: ${solution(tree)}`);
+    console.log('Incorrect levels.');
   }
 };
 
-const c = {val: 1,
-  children: [],
-};
-
-const a = {val: 2,
-  children: [c],
-};
-
-const b = {val: 3,
-  children: [],
-};
-
-const t = {val: 1,
-  children: [a, b],
-};
-
-test([t], [[1], [2, 3], [1]]);
+test([tree1], 2);
+test([tree2], 3);
